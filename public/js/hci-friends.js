@@ -3,6 +3,7 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	$(".friend h3").click(listenerFn);
 })
 
 /*
@@ -37,4 +38,9 @@ function anagrammedName(name) {
 		console.log(name + " not known for anagramming.");
 		return name;
 	}
+}
+
+function listenerFn(e) {
+	e.preventDefault();
+	$(this).text(anagrammedName($(this).text()));
 }
